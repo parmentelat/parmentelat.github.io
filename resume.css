@@ -1,0 +1,126 @@
+/* tweak font size for printing */
+
+@media print {
+    table.section-table td {
+        font-size: 15px;
+    }
+   @page { margin: 0; }
+   body {
+       margin-top: 1cm;
+       margin-left: 1.6cm;
+       margin-right: 1.6cm;
+   }
+   h1 {
+       margin-top: 2cm;
+   }
+   h1.plain-page {
+       margin-top: .5cm;
+   }
+}
+
+body {
+    font-family: Verdana, sans-serif;
+}
+
+.fixed_header {
+    border-spacing: 0px 0px;
+    background-color: #dddddd;
+    display: block;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    z-index: 10;
+    padding: 5px 20px;
+}
+/* ba84a2 hover a73662 */
+.fixed_header A {
+    text-decoration: none;
+    color: #ba84a2;
+}
+.fixed_header A:hover {
+    text-decoration: none;
+    color: #a73662;
+}
+
+.maintext {
+    position: relative;
+    top: 35px;
+}
+
+.banner {
+    font-size: medium; 
+    color: #999999; 
+}
+.line {
+    height: 1px;
+    background-color: #999999;
+    width: 100%;
+}
+.maintext {
+    font-size: small; 
+}
+.maintext h1 {
+    font-size: large; 
+    font-weight: normal; 
+    font-style: italic; 
+    background-color: #dddddd;
+    padding: 5px 0px 5px 20px;
+}
+/* #298040 - hover b88110 */
+.maintext A {
+    color: #5cac6b;
+    text-decoration: none
+}
+.maintext A:hover {
+    color: #298040;
+    text-decoration: underline
+}
+.thename {
+    font-weight: normal; 
+    font-size: large; 
+}
+.theaddress {
+    font-weight: normal; 
+    font-size: medium; 
+    line-height: 150%;
+}
+.label {
+    font-style: italic;
+    vertical-align: top;
+    text-align: right;
+    padding-right: 5px;
+}
+.leftcol {
+    width: 140
+}
+.leftcolwide {
+    width: 160
+}
+.ticker {
+    vertical-align: baseline
+}
+.company {
+    font-size: medium; 
+    font-style: italic ; 
+    font-weight: bold
+}
+.company-color {
+    font-size: medium; 
+    font-style: italic; 
+    font-weight: bold; 
+    color: #5cac6b;
+}
+.outline {
+    font-style: italic;
+    font-size: medium;
+    padding-left: 20px;
+}
+
+.left { text-align: left; }
+.right { text-align: right; }
+
+
+span.boat-name {
+    font-style: italic;
+    color: #ed6483;
+}
