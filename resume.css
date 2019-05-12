@@ -1,3 +1,31 @@
+@media print {
+
+    body {
+        font-size: 1.1rem;
+    }
+
+    @page {
+        margin: 0cm 1cm 0cm 1cm;
+    }
+
+    .section {
+        margin-top: .9cm;
+    }
+
+    .section.new-page {
+        margin-top: 3cm;
+    }
+}
+
+@media screen {
+    
+    div.section {
+        margin-top: 18px;
+    }
+}
+
+/* --- */
+
 body {
     font-family: Raleway, sans-serif;
 }
@@ -44,10 +72,6 @@ div.phone-area {
 }
 
 /* --- */
-div.section {
-    margin-top: 18px;
-}
-
 .header {
     width: 100%;
     border-radius: 8px;
