@@ -1,6 +1,12 @@
+/* 
+ * how to print
+ * 
+ * I have manually inserted a 'new-page' at the right place
+ */ 
+
 @media print {
 
-    /* https://stackoverflow.com/questions/8228088/remove-header-and-footer-from-window-print */
+/* https://stackoverflow.com/questions/8228088/remove-header-and-footer-from-window-print */
     @page {
         margin: 0;
     }
@@ -9,7 +15,7 @@
         font-size: 1.2rem;
     }
 
-
+    /* a little more space since we can afford it */
     .section {
         margin-top: .9cm;
     }
@@ -21,6 +27,11 @@
 
 @media screen {
     
+    /* 
+     * because if I don't put it inside @media screen
+     * then it applies everywhere
+     */
+
     div.section {
         margin-top: 18px;
     }
@@ -32,7 +43,9 @@ body {
     font-family: Raleway, sans-serif;
 }
 
-/* --- */
+/* --- 
+ * the email-address remains stuck in the upper right corner
+ */
 .fixed_header {
     background-color: #f4f4f4;
     display: block;
@@ -41,11 +54,13 @@ body {
     right: 5px;
     z-index: 10;
     padding: 5px 20px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 .maintext {
     position: relative;
-    top: 40px;
+    top: 45px;
 }
 
 
@@ -112,6 +127,18 @@ h1.header {
 }
 
 /* --- */
+.company {
+    font-size: medium; 
+    font-style: italic ; 
+    font-weight: 500;
+}
+.company-color {
+    font-size: medium; 
+    font-style: italic; 
+    font-weight: 500; 
+    color: #81c796;
+}
+
 span.boat-name {
     font-style: italic;
     color: #ed6483;
