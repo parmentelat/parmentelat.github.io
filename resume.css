@@ -1,70 +1,163 @@
-/* 
+/*
  * how to print
- * 
+ *
  * I have manually inserted a 'new-page' at the right place
- */ 
+ */
 
 @media print {
-
 /* https://stackoverflow.com/questions/8228088/remove-header-and-footer-from-window-print */
     @page {
         margin: 0;
     }
     body {
         margin: 1.6cm;
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
-
     /* a little more space since we can afford it */
     .section {
         margin-top: .9cm;
     }
-
     .new-page {
-        margin-top: 3cm;
+        margin-top: 2cm !important;
     }
 }
 
 @media screen {
-    
-    /* 
-     * because if I don't put it inside @media screen
-     * then it applies everywhere
-     */
-
-    div.section {
-        margin-top: 18px;
+    /* if not inside @media screen then it applies everywhere */
+    section {
+        margin-bottom: 18px;
     }
 }
 
-/* --- */
+@media only screen and (max-width: 512px) {
+    div#main-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+         "header" "projects" "teaching" "skills" "experience"
+         "education" "languages" "other";
+    }
+    div.exp-item {
+        grid-template-columns: 1fr;
+        grid-template-areas: "period" "company" "details";
+    }
+    /* important because in regular page size
+       we style based on ids, thus quite specific */
+    div.regular-item {
+        grid-template-columns: 1fr !important;
+        grid-template-areas: "summary" "details";
+    }
+}
+
+/* --- overall layout */
+#main-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+        "header header"
+        "projects projects"
+        "teaching teaching"
+        "skills skills"
+        "experience experience"
+        "education languages"
+        "other other"
+    ;
+}
+
+#header { grid-area: header; }
+#experience { grid-area: experience; }
+#projects { grid-area: projects; }
+#skills { grid-area: skills; }
+#teaching { grid-area: teaching; }
+#education { grid-area: education; }
+#languages { grid-area: languages; }
+#other { grid-area: other; }
+
+/* --- experience layout */
+
+.exp-item {
+    display: grid;
+    grid-template-columns: 150px auto;
+    grid-template-areas:
+      "period company" ". details" ;
+}
+.exp-period { grid-area: period; }
+.exp-company { grid-area: company; }
+.exp-details { grid-area: details; }
+
+/* --- regular layout */
+
+.regular-item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-template-areas:
+      "summary details";
+}
+#education>.regular-item,
+#other>.regular-item {
+        grid-template-columns: 70px 1fr;
+}
+#languages>.regular-item {
+    grid-template-columns: 90px 1fr;
+}
+
+.regular-summary { grid-area: summary; }
+.regular-details { grid-area: details; }
+
+/* --- header */
+#header {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#header-name {
+    font-weight: 500;
+    font-size: 125%;
+}
+#header-title {
+    font-weight: 500;
+    font-size: 110%;
+}
+#header-phone { text-align: center; }
+#header-github { text-align: right; }
+
+#gadgets {
+    display: grid;
+    width: 100%;
+}
+
+#gadgets {
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 40px 1fr;
+    grid-template-areas: "name name name" "title phone github";
+}
+#header-name { grid-area: name; }
+#header-title { grid-area: title; }
+#header-phone { grid-area: phone; }
+#header-github { grid-area: github; }
+
+/* ---
+ * the email-address remains stuck in the upper right corner
+ */
+ #header-fixed {
+    display: block;
+    position: fixed;
+    top: 8px;
+    right: 20px;
+    z-index: 10;
+    padding: 5px 20px;
+    background-color: #f4f4f4;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+/* --- general */
 
 body {
     font-family: Raleway, sans-serif;
 }
 
-/* --- 
- * the email-address remains stuck in the upper right corner
- */
-.fixed_header {
-    background-color: #f4f4f4;
-    display: block;
-    position: fixed;
-    top: 5px;
-    right: 5px;
-    z-index: 10;
-    padding: 5px 20px;
-    border: 1px solid black;
-    border-radius: 5px;
-}
-
-.maintext {
-    position: relative;
-    top: 45px;
-}
-
-
-/* --- */
 a {
     text-decoration: none;
     color: #81c79b;
@@ -73,73 +166,81 @@ a:hover {
     text-decoration: none;
     color: #30a6e5;
 }
+ul {
+    list-style: none;
+    text-indent: -1em;
+    padding-left: 1em;
+    margin-left: 4px;
+    margin-top: 0.4em;
+ }
 
-/* --- */
-div.name-area .name {
-    font-weight: 500;
-    font-size: 125%;
+li:before {
+   content: "»";
+   padding-right: 5px;
 }
-div.name-area .title {
-    font-weight: 500;
-    font-size: 110%;
-}
-
-div.phone-area {
-    text-align: right;
-}
-
-/* --- */
-.header {
-    width: 100%;
-    border-radius: 8px;
-    background-color: #f0f0f0;
-    color: #606060;
-}
-h1.header {
-    padding: 4px 0px 4px 20px;
-    font-size: 1.3rem;
-}
-.main-column h2.header {
-    font-size: 1.2rem;
-    padding: 4px 4px 4px 10px;
-}
-.left-column h2.header {
-    font-size: 1.10rem;
-    padding: 4px;
-    text-align: center;
-}
-
-/* --- */
-.main-column p {
-    margin-bottom: 0px;
-}
-                       
-.main-column ul {
-   list-style: none;
-   margin-left: 0;
-   padding-left: 1em;
-   text-indent: -1em;
-}
-
-.main-column li:before {
-  content: "»";
-  padding-right: 5px;
-}
-
-/* --- */
 .company {
-    font-size: medium; 
-    font-style: italic ; 
-    font-weight: 500;
-}
-.company-color {
-    font-size: medium; 
-    font-style: italic; 
-    font-weight: 500; 
+    font-size: medium;
+    font-style: italic ;
+    font-weight: 400;
     color: #81c796;
 }
-
-span.boat-name {
+.boat-name {
     font-style: italic;
-    color: #ed6483;
+    color: #f78ea6;
+}
+
+
+/* --- section headers */
+
+section:not(#header) {
+    padding: 6px;
+    /* somehow top and bottom margins seems to add */
+    margin: 10px 10px 0px 10px;
+}
+/* again margins seem to add up */
+section#education {
+    margin-right: 0px;
+}
+.section-name {
+    border-radius: 8px;
+    padding: 8px;
+    background-color: #e5fcef;
+    font-size: 140%;
+    font-weight: 500;
+}
+
+/* --- vertical spacing */
+.exp-details {
+    margin-top: 6px;
+}
+
+section>div:nth-child(2) {
+    margin-top: 8px;
+}
+
+/* left hand side items */
+.exp-period,
+.regular-summary>div {
+    background-color: #e5f4fa;
+    border-radius: 6px;
+    padding: 6px;
+    margin-right: 8px;
+    text-align: right;
+/*    font-size: 110%;*/
+    font-weight: 400;
+}
+.exp-company {
+    display: flex;
+    align-items: center;
+}
+.exp-period,
+.regular-summary,
+.regular-details {
+    margin-bottom: 6px;
+}
+
+.regular-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
