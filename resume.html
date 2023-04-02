@@ -12,13 +12,18 @@
 <body>
 
   <div id="main-grid">
-    <!-- the fixed header -->
+    <!-- the fixed headers -->
 
     <!-------------------->
     <section id="header">
-      <div id="header-fixed">
+      <div id="fixed-right" class="header-fixed">
         <a href="mailto:thierry.parmentelat@inria.fr?subject=your%20resume">thierry.parmentelat@inria.fr</a>
       </div>
+      <div id="fixed-left" class="header-fixed">
+        <a href="https://parmentelat.github.io/">https://parmentelat.github.io/</a>
+      </div>
+
+
       <div id="gadgets">
         <div id="header-name">Thierry Parmentelat</div>
         <div id="header-title">Research Engineer</div>
@@ -46,10 +51,12 @@
             anechoic sheltered chamber; it primarily addresses WiFi, but also features
             Software-Defined Radio features with USRP extensions, that can for example
             host 5G networks
-            <br/>it features an orchestration engine <a
+            <br>it features an orchestration engine <a
             href="https://nepi-ng.inria.fr">nepi-ng</a> that is based on Python's
             <code>asyncio</code> asynchroneous programming paradigm, for massively parallel
             interaction with the testbed
+            <br> I have been the architect and main developer of that testbed,
+            including deployment, development and operations
           </div>
         </div>
       </div> <!-- regular-item -->
@@ -65,14 +72,15 @@
             <a href="https://github.com/parmentelat/nbhosting/">nbhosting</a>
             aims at extending teaching experience with Jupyter notebooks; it can be used
             as a silent companion to Learning Management Systems (LMS) like open-edx or
-            moodle, or as a standalone micro-LMS of its own<br>
-            I run <a href="https://nbhosting.inria.fr">a nbhosting instance</a>
+            moodle, or as a standalone micro-LMS of its own
+            <br>I run <a href="https://nbhosting.inria.fr">a nbhosting instance</a>
             that serves the notebooks for several MOOCs on
             <a href="https://fun-mooc.fr">France Université Numérique</a>; the <i>Rectorat
             de Paris</i> currently runs several instances
             <a href="https://www.ac-paris.fr/portail/jcms/p1_1971804/capytale-pour-creer-et-partager-une-activite-python">
             behind its Capytale service</a>, that allows all teachers in the Paris region
             to easily use notebooks in their classroom
+            <br>here again I am the architect and devops principal of this deployment
             </div>
           </div>
       </div> <!-- regular-item -->
@@ -90,6 +98,9 @@
             users with so-called slices on any number of the 1000+ nodes scattered around
             the world, that are currently managed from two federated operations centers,
             located in Princeton and in Paris
+            <br>after creating the federation code, I have deployed and operated
+            PlanetLab Europe in its initial phase, and was then remained the
+            lead developer on the European side
           </div>
         </div>
       </div> <!-- regular-item -->
@@ -106,21 +117,7 @@
             aimed at providing a full replacement of a traditional PBX, as a software-only
             hosted solution for multi-tenant deployments in the context of unified
             communication
-          </div>
-        </div>
-      </div> <!-- regular-item -->
-
-      <div class="regular-item">
-        <div class="regular-summary">
-          <div>
-            simu<wbr>lation
-          </div>
-        </div>
-        <div class="regular-details">
-          <div>
-            MissRdp was a modeling and simulation system based on
-            colored Petri nets, used for simulating, assessing and
-            dimensioning large industrial objects
+            <br>I was CTO of the French side of the organization
           </div>
         </div>
       </div> <!-- regular-item -->
@@ -139,6 +136,24 @@
               safety on the plants
             </div>
           </div>
+      </div> <!-- regular-item -->
+
+      <div class="regular-item">
+        <div class="regular-summary">
+          <div>
+            simu<wbr>lation
+          </div>
+        </div>
+        <div class="regular-details">
+          <div>
+            MissRdp was a modeling and simulation system based on
+            colored Petri nets, used for simulating, assessing and
+            dimensioning large industrial objects
+            <br> I was co-developer of that tool, that was used at the time by
+            CNES and other big industries, mainly for safety-oriented
+            assessments
+          </div>
+        </div>
       </div> <!-- regular-item -->
 
     </section>
@@ -171,35 +186,34 @@
         </div>
         <div class="regular-details">
           <div>
-            since 2019 I am deeply involved in the course of Computer Science 
-            for the 1st-year students at <i>École des Mines de Paris</i>
+            since 2019 I am deeply involved in the course of Computer Science
+            for the 1st-year students at <i>École des Mines de Paris - PSL</i>
           </div>
         </div>
       </div> <!-- regular-item -->
 
     </section>
 
-    <section id="skills" class="new-page">
+    <section id="skills" class="print-new-page print-extra-space">
       <div class="section-name">
         skills
       </div>
       <div class="regular-item">
         <div class="regular-summary">
           <div>
-            software develop<wbr>ment
+            software development
           </div>
         </div>
         <div class="regular-details">
           <div>
             having been exposed to Open Source Projects since I was
-            born to computing 30+ years ago, I am very familiar with
+            born to computing 35+ years ago, I am very familiar with
             common practices such as source code management, cooperation
             through merge requests, continuous integration, bug-tracking,
             trouble ticketing; follow me on <a
             href="https://github.com/parmentelat">github</a>, as well as
             on the <a href="http://git.onelab.eu/">OneLab git</a> for
-            quite some stuff from the pre-github era; one day I created a
-            <a href="http://sourcerer.io/parmentelat">sourcerer</a>
+            quite some stuff from the pre-github era
             account
           </div>
         </div>
@@ -250,7 +264,7 @@
 
     </section>
 
-    <section id="experience">
+    <section id="experience" class="print-extra-space">
       <div class="section-name">
         experience
       </div>
@@ -326,7 +340,7 @@
         </div>
       </div> <!-- exp-item -->
 
-      <div class="exp-item new-page">
+      <div class="exp-item print-new-page print-extra-space">
         <div class="exp-period">
           1991-1998
         </div>
